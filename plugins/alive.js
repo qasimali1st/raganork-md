@@ -62,10 +62,10 @@ Module({
     }
   } 
   let cmdmenu = final.trim();
-  var menu = `╭═══〘 ${BOT_INFO.split(";")[0]} 〙═══⊷❍
+  var menu = `╭═══〘 ${BOT_INFO.split("KHARAL-MD;")[0]} 〙═══⊷
 ┃${star}╭──────────────
 ┃${star}│
-┃${star}│ _*Owner*_ : ${BOT_INFO.split(";")[1]}
+┃${star}│ _*Owner*_ : ${BOT_INFO.split("KHARAL;")[1]}
 ┃${star}│ _*User*_ : ${message.senderName.replace( /[\r\n]+/gm, "" )}
 ┃${star}│ _*Mode*_ : ${MODE}
 ┃${star}│ _*Server*_ : ${__dirname.startsWith('/skl')?"Heroku":"Private (VPS)"}
@@ -82,12 +82,12 @@ Module({
 
 ${cmdmenu}`
 try {
-  var _img = await skbuffer(BOT_INFO.split(";")[3]||`https://picsum.photos/800/500`)
+  var _img = await skbuffer(BOT_INFO.split(";")[3]||`https://telegra.ph/file/d6b48bca7758119ef0652.jpg`)
 } catch (error) {
-  var _img = await skbuffer(`https://i.imgur.com/B2YWSLk.jpg`)
+  var _img = await skbuffer(`https://telegra.ph/file/d6b48bca7758119ef0652.jpg`)
 }
 return await message.client.sendMessage(message.jid,{
-  image: await skbuffer(BOT_INFO.split(";")[3]||`https://picsum.photos/800/500`),
+  image: await skbuffer(BOT_INFO.split(";")[3]||`https://telegra.ph/file/d6b48bca7758119ef0652.jpg`),
   caption: FancyRandom(menu)
 })
 }))
